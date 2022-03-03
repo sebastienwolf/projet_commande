@@ -19,10 +19,10 @@
       <!--#demo.hoge(v-bind:class="{active:isActive}", v-on:click="isActive=!isActive") click here!
     -->
       <nav class="nav flex-column">
-        <a class="nav-link" href="javascript:void(0);" v-bind:class="{active:isActive}" v-on:click="isActive=!isActive">Home</a>
+        <a class="nav-link" href="javascript:void(0);" v-bind:class="{active:isActive}" v-on:click="isActive=!isActive"></a>
 
-        <a class="nav-link" href="formulaire.html">commande</a>
-
+        <a class="nav-link" href="#">Commande</a>
+        <a class="nav-link" href="../client.php">Client</a>
         <form>
           <a class="nav-link" href='../../index.php'><span>Déconnexion</span></a>
 

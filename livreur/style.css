@@ -1,6 +1,10 @@
 /* SIMPLONSONG */
 body {
-  color: rgb(0, 0, 0);
+  background-color: #6d1448;
+  background-image: radial-gradient(at 47% 33%, #f41a55 0, transparent 59%), radial-gradient(at 82% 65%, white 0, transparent 55%);
+  background-attachment: fixed;
+  color: #000000;
+  background-repeat: no-repeat;
 }
 
 .wrapper {
@@ -8,23 +12,33 @@ body {
   grid-template-columns: 140px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 60px calc(100vh - 100px) 40px;
 }
+
 .wrapper.menuHide {
   grid-template-columns: repeat(12, 1fr);
 }
-.wrapper > div {
+
+.wrapper>div {
   padding: 10px;
 }
+
 /* ARRIERE PLAN DE SIMPLONSONG */
 .header {
   grid-column: span 12;
-  background-color: rgb(240, 112, 112);
+  /* background-color: rgb(240, 112, 112); */
+  backdrop-filter: blur(6px) saturate(84%);
+  -webkit-backdrop-filter: blur(6px) saturate(84%);
+  background-color: rgba(246, 246, 246, 0.22);
   font-size: 28px;
   text-align: center;
 }
+
 /* ARRIERE PLAN DU COTE MENU  */
 .menu {
   grid-column: span 1;
-  background-color: #bc1004;
+  /* background-color: #bc1004; */
+  backdrop-filter: blur(6px) saturate(84%);
+  -webkit-backdrop-filter: blur(6px) saturate(84%);
+  background-color: rgba(255, 255, 255, 0.52);
 }
 
 .menu nav a {
@@ -38,23 +52,27 @@ body {
   background-color: #ffffff;
   color: rgb(0, 0, 0);
 }
+
 .content.menuHide {
   grid-column: span 12;
 }
 
-.footer {
+/* .footer {
   grid-column: span 12;
   background-color: #ccc;
-  text-align: center;
-}
+  text-align: center; */
+
 
 .og_table {
   color: #666;
 }
+
 .og_table table thead {
   border-bottom: 1px solid #000;
 }
-.og_table table th, .og_table table td {
+
+.og_table table th,
+.og_table table td {
   padding: 5px 10px;
   vertical-align: top;
 }
@@ -69,12 +87,14 @@ body {
   height: 30px;
 }
 
-.echec{
+.echec {
   background-color: #bc1004 !important;
 }
-.terminer{
+
+.terminer {
   background-color: #02b820 !important;
 }
-.cours{
+
+.cours {
   background-color: #fcbb08 !important;
 }

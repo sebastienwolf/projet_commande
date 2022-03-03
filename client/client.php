@@ -1,3 +1,8 @@
+<?php
+include '../connexion.php';
+// COMMANDE SQL, query:  prépare et exécute une requête SQL en un seul appel de fonction,
+$stmt = $pdo->query('SELECT * FROM commande');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,9 +23,11 @@
       <!--#demo.hoge(v-bind:class="{active:isActive}", v-on:click="isActive=!isActive") click here!
     -->
       <nav class="nav flex-column">
-        <a class="nav-link" href="javascript:void(0);" v-bind:class="{active:isActive}" v-on:click="isActive=!isActive">Home</a>
+        <a class="nav-link" href="javascript:void(0);" v-bind:class="{active:isActive}" v-on:click="isActive=!isActive"></a>
 
-        <a class="nav-link" href="./commande/clientCommande.php">commande</a>
+        <a class="nav-link" href="./commande/clientCommande.php">Commande</a>
+        <a class="nav-link" href="#">Client</a>
+
 
         <form>
           <a class="nav-link" href='../index.php'><span>Déconnexion</span></a>
@@ -39,24 +46,41 @@
           }
           ?>
 
-
-
-
-
-
         </form>
 
       </nav>
 
 
-
     </div>
     <div class="content">
-      <p class="toggle" href="javascript:void(0);" v-bind:class="{active:isActive}" v-on:click="isActive=!isActive"> </p>
+      <p class="toggle" href="#"></a>
       <div class="og_table table-responsive">
-        <form action="./clientcom.php" method="POST" id='test' onforminput="alert('Vous venez de saisir du contenu')">
+        <table class="table table-striped table-sm">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Numero Commande</th>
+              <th scope="col">Commande</th>
+              <th scope="col">Lieu</th>
+              <th scope="col">Date - Heure</th>
+              <th scope="col">Statut</th>
+            </tr>
+          </thead>
 
-        </form>
+          <?php while ($row = $stmt->fetch()) {
+            $i = $row->idUser_p3 ?>
+            <tr>
+              <!-- ON UTILISE LE TAG PHP ET ECHO DANS LES CASES DU TABLEAU POUR LES REMPLIR AVEC LES DONNÉES -->
+              <form action="edit.php" method="post">
+                <td><?php echo $row->idCommande; ?></td>
+                <td><?php echo $row->comCommande; ?></td>
+                <td><?php echo $row->lieu; ?></td>
+                <td><?php echo $row->dateHeure; ?></td>
+                <td class="<?php echo $row->statut; ?>"><?php echo $row->statut; ?></td>
+              </form>
+            </tr>
+
+          <?php } ?>
+        </table>
       </div>
     </div>
 
@@ -66,6 +90,7 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js'>
 
   </script>
+
   <script src="../livreur/script.js"></script>
 
 </body>
