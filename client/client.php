@@ -26,7 +26,7 @@ $stmt = $pdo->query('SELECT * FROM commande');
         <a class="nav-link" href="javascript:void(0);" v-bind:class="{active:isActive}" v-on:click="isActive=!isActive"></a>
 
         <a class="nav-link" href="./commande/clientCommande.php">Commande</a>
-        <a class="nav-link" href="#">Client</a>
+        <a class="nav-link disabled" href="#">Client</a>
 
 
         <form>

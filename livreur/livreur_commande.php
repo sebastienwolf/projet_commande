@@ -1,12 +1,8 @@
 <?php
 include '../connexion.php';
-
 // COMMANDE SQL, query:  prépare et exécute une requête SQL en un seul appel de fonction,
 $stmt = $pdo->query('SELECT * FROM commande');
-
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,24 +11,27 @@ $stmt = $pdo->query('SELECT * FROM commande');
   <title>Page Admin</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
-  <link rel="stylesheet" href="style.css">
-  <!-- bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
 
 </head>
 
 <body>
   <!-- partial:index.partial.html -->
   <div class="wrapper">
-    <div class="header">Commande</div>
+    <div class="header">Simply only very</div>
     <div class="menu">
       <!--#demo.hoge(v-bind:class="{active:isActive}", v-on:click="isActive=!isActive") click here!
     -->
       <nav class="nav flex-column">
-        <a class="nav-link" href="#">Commande</a>
-        <a class="nav-link" href="livreur_user.php">Client</a>
+        <a class="nav-link" href="javascript:void(0);" v-bind:class="{active:isActive}" v-on:click="isActive=!isActive"></a>
+
+        <a class="nav-link disabled" href="#">Commande</a>
+        <a class="nav-link" href="./livreur_user.php">Client</a>
+
+
         <form>
-          <a class="nav-link" href='../index.php?deconnexion=true'><span>Déconnexion</span></a>
+          <a class="nav-link" href='../index.php'><span>Déconnexion</span></a>
+
           <?php
           session_start();
           if (isset($_GET['submit'])) {
@@ -46,12 +45,10 @@ $stmt = $pdo->query('SELECT * FROM commande');
             echo "<br>Bonjour $user";
           }
           ?>
+
         </form>
 
       </nav>
-
-
-
     </div>
     <div class="content">
       <p class="toggle" href="#"></a>
@@ -60,6 +57,7 @@ $stmt = $pdo->query('SELECT * FROM commande');
           <thead class="thead-dark">
             <tr>
               <th scope="col">Numero Commande</th>
+              <th scope="col">Commande</th>
               <th scope="col">Lieu</th>
               <th scope="col">Date - Heure</th>
               <th scope="col">Numero Client</th>
@@ -76,6 +74,7 @@ $stmt = $pdo->query('SELECT * FROM commande');
             <tr>
               <!-- ON UTILISE LE TAG PHP ET ECHO DANS LES CASES DU TABLEAU POUR LES REMPLIR AVEC LES DONNÉES -->
               <td><?php echo $row->idCommande; ?></td>
+              <td><?php echo $row->comCommande; ?></td>
               <td><?php echo $row->lieu; ?></td>
               <td><?php echo $row->dateHeure; ?></td>
               <td><?php echo $row->idUser_p3; ?></td>
@@ -103,8 +102,11 @@ $stmt = $pdo->query('SELECT * FROM commande');
   </div>
   <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js'></script>
-  <script src="./script.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js'>
+
+  </script>
+
+  <script src="../livreur/script.js"></script>
 
 </body>
 

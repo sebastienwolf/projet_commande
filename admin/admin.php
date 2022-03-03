@@ -1,7 +1,8 @@
 <?php
 include '../connexion.php';
 // COMMANDE SQL, query:  prépare et exécute une requête SQL en un seul appel de fonction,
-$stmt = $pdo->query('SELECT * FROM user_p3 WHERE userType = "client"');
+$stmt = $pdo->query('SELECT * FROM user_p3');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +12,7 @@ $stmt = $pdo->query('SELECT * FROM user_p3 WHERE userType = "client"');
   <title>Page Admin</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../livreur/style.css">
 
 </head>
 
@@ -25,7 +26,6 @@ $stmt = $pdo->query('SELECT * FROM user_p3 WHERE userType = "client"');
       <nav class="nav flex-column">
         <a class="nav-link" href="javascript:void(0);" v-bind:class="{active:isActive}" v-on:click="isActive=!isActive"></a>
 
-        <a class="nav-link" href="./livreur_commande.php">Commande</a>
         <a class="nav-link disabled" href="#">Client</a>
 
 
@@ -37,7 +37,7 @@ $stmt = $pdo->query('SELECT * FROM user_p3 WHERE userType = "client"');
           if (isset($_GET['submit'])) {
             if ($_GET['submit'] == true) {
               session_unset();
-              header("location:../adminPage.php");
+              header("location:../index.php");
             }
           } else if (isset($_SESSION['pseudo'])) {
             $user = $_SESSION['pseudo'];
@@ -49,6 +49,7 @@ $stmt = $pdo->query('SELECT * FROM user_p3 WHERE userType = "client"');
         </form>
 
       </nav>
+
     </div>
     <div class="content">
       <p class="toggle" href="javascript:void(0);" v-bind:class="{active:isActive}" v-on:click="isActive=!isActive"> </p>
@@ -56,11 +57,14 @@ $stmt = $pdo->query('SELECT * FROM user_p3 WHERE userType = "client"');
         <table class="table table-striped table-sm">
           <thead class="thead-dark">
             <tr>
-              <th scope="col">ID Client</th>
+              <th scope="col">ID</th>
               <th scope="col">Nom</th>
               <th scope="col">Prenom</th>
               <th scope="col">Email</th>
               <th scope="col">Pseudo</th>
+              <th scope="col">Type</th>
+              <th scope="col">Modifier</th>
+              <th scope="col">Purge?</th>
             </tr>
           </thead>
 
@@ -68,12 +72,17 @@ $stmt = $pdo->query('SELECT * FROM user_p3 WHERE userType = "client"');
             $i = $row->idUser_p3 ?>
             <tr>
               <!-- ON UTILISE LE TAG PHP ET ECHO DANS LES CASES DU TABLEAU POUR LES REMPLIR AVEC LES DONNÉES -->
-              <form action="edit.php" method="post">
+              <form action="./modif.php" method="post">
                 <td><?php echo $row->idUser_p3; ?></td>
                 <td><?php echo $row->nom; ?></td>
                 <td><?php echo $row->prenom; ?></td>
                 <td><?php echo $row->mail; ?></td>
                 <td><?php echo $row->pseudo; ?></td>
+                <td><?php echo $row->userType; ?></td>
+                <input type="text" hidden name="idea" value="<?php echo $i ?>">
+                <td><button type="submit" class="btn btn-success" name="edit">Edit</button></td>
+                <td><button type="submit" class="btn btn-danger" name="delete">PURGE</button></td>
+
               </form>
             </tr>
           <?php } ?>

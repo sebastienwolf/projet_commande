@@ -30,8 +30,7 @@ if (isset($_POST['pseudo']) && isset($_POST['password'])) {
          $_SESSION['id'] = $reponse[0]->idUser_p3;
          if ($reponse[0]->userType == 'admin') {
             header('Location: ../admin/admin.php');
-         }
-         if ($reponse[0]->userType == 'livreur') {
+         } elseif ($reponse[0]->userType == 'livreur') {
             header('Location: ../livreur/livreur_commande.php');
          } else {
             header('Location: ../client/client.php');
