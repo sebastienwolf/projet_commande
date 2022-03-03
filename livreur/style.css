@@ -1,0 +1,80 @@
+/* SIMPLONSONG */
+body {
+  color: rgb(0, 0, 0);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 140px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 60px calc(100vh - 100px) 40px;
+}
+.wrapper.menuHide {
+  grid-template-columns: repeat(12, 1fr);
+}
+.wrapper > div {
+  padding: 10px;
+}
+/* ARRIERE PLAN DE SIMPLONSONG */
+.header {
+  grid-column: span 12;
+  background-color: rgb(240, 112, 112);
+  font-size: 28px;
+  text-align: center;
+}
+/* ARRIERE PLAN DU COTE MENU  */
+.menu {
+  grid-column: span 1;
+  background-color: #bc1004;
+}
+
+.menu nav a {
+  color: rgb(0, 0, 0);
+}
+
+
+/* BACKGROUND DU COTÉ DE LA LSITE DES ULTILSATEURS */
+.content {
+  grid-column: span 11;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+.content.menuHide {
+  grid-column: span 12;
+}
+
+.footer {
+  grid-column: span 12;
+  background-color: #ccc;
+  text-align: center;
+}
+
+.og_table {
+  color: #666;
+}
+.og_table table thead {
+  border-bottom: 1px solid #000;
+}
+.og_table table th, .og_table table td {
+  padding: 5px 10px;
+  vertical-align: top;
+}
+
+.toggle {
+  width: 80px;
+  text-align: center;
+  padding: 5px;
+  display: flex;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+  width: 40px;
+  height: 30px;
+}
+
+.echec{
+  background-color: #bc1004 !important;
+}
+.terminer{
+  background-color: #02b820 !important;
+}
+.cours{
+  background-color: #fcbb08 !important;
+}
