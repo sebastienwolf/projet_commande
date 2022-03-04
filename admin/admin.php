@@ -27,6 +27,11 @@ $stmt = $pdo->query('SELECT * FROM user_p3');
         <a class="nav-link" href="javascript:void(0);" v-bind:class="{active:isActive}" v-on:click="isActive=!isActive"></a>
 
         <a class="nav-link disabled" href="#">Client</a>
+        <a class="nav-link" href="./commande/adminCommande.php">Commande</a>
+        <a class="nav-link" href="./adminAddUser.php">ajout utilisateur</a>
+        <a class="nav-link" href="./adminAddCom.php">ajout de commande</a>
+
+
 
 
         <form>

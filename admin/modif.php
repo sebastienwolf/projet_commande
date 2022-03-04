@@ -41,6 +41,7 @@ if (isset($_POST["edit"])) { ?>
                     <a class="nav-link" href="javascript:void(0);" v-bind:class="{active:isActive}" v-on:click="isActive=!isActive"></a>
 
                     <a class="nav-link" href="./admin.php">Client</a>
+                    <a class="nav-link" href="./commande/adminCommande.php">Commande</a>
 
 
                     <form>
