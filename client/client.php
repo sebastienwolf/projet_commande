@@ -1,7 +1,8 @@
 <?php
 include '../connexion.php';
 // COMMANDE SQL, query:  prépare et exécute une requête SQL en un seul appel de fonction,
-$stmt = $pdo->query('SELECT * FROM commande');
+$u = $_SESSION['id'];
+$stmt = $pdo->query("SELECT * FROM commande WHERE idUser_p3 = $u");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +34,6 @@ $stmt = $pdo->query('SELECT * FROM commande');
           <a class="nav-link" href='../index.php'><span>Déconnexion</span></a>
 
           <?php
-          session_start();
           if (isset($_GET['submit'])) {
             if ($_GET['submit'] == true) {
               session_unset();
@@ -75,7 +75,7 @@ $stmt = $pdo->query('SELECT * FROM commande');
                 <td><?php echo $row->comCommande; ?></td>
                 <td><?php echo $row->lieu; ?></td>
                 <td><?php echo $row->dateHeure; ?></td>
-                <td class="<?php echo $row->statut; ?>"><?php echo $row->statut; ?></td>
+                <td style="color: white;" class="<?php echo $row->statut; ?>"><?php echo $row->statut; ?></td>
               </form>
             </tr>
 

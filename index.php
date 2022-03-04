@@ -57,7 +57,7 @@
                 <label for=""><b>Mot de Passe :</b></label>
                 <input type="password" name="password" id="" placeholder="Password"> <br>
                 <label for=""><b>Pseudo :</b></label>
-                <input type="text" name="pseudo" id="pseudo" placeholder="Pseudo"> <br>
+                <input type="text" name="userPseudo" id="pseudo" placeholder="Pseudo"> <br>
                 <input type="submit" value="inscription">
             </form>
         </div>

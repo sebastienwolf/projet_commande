@@ -33,7 +33,7 @@ $stmt = $pdo->query('SELECT * FROM user_p3 WHERE userType = "client"');
           <a class="nav-link" href='../index.php'><span>Déconnexion</span></a>
 
           <?php
-          session_start();
+          // session_start();
           if (isset($_GET['submit'])) {
             if ($_GET['submit'] == true) {
               session_unset();

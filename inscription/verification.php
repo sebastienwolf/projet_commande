@@ -21,8 +21,8 @@ if (isset($_POST['pseudo']) && isset($_POST['password'])) {
       // transformer le retour en tableau
       $reponse = $sql->fetchAll();
       // vérification du mot de passe en variable
+      //$verifPwd = password_verify($password, $reponse[0]->mdp);
       $verifPwd = password_verify($password, $reponse[0]->mdp);
-
       // si le mot de passe et pseudo alors on continue
       if ($verifPwd == true && ($userName == $reponse[0]->pseudo)) // nom d'utilisateur et mot de passe correctes
       {
@@ -35,10 +35,10 @@ if (isset($_POST['pseudo']) && isset($_POST['password'])) {
          } else {
             header('Location: ../client/client.php');
          }
+      } else {
+         header('Location: ../index.php?erreur=1'); // utilisateur ou mot de passe incorrect
       }
    } else {
-      header('Location: ../index.php?erreur=1'); // utilisateur ou mot de passe incorrect
+      header('Location: ../index.php?erreur=2'); // utilisateur ou mot de passe vide
    }
-} else {
-   header('Location: ../index.php?erreur=2'); // utilisateur ou mot de passe vide
 }

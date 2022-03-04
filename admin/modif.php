@@ -47,7 +47,7 @@ if (isset($_POST["edit"])) { ?>
                         <a class="nav-link" href='../index.php'><span>Déconnexion</span></a>
 
                         <?php
-                        session_start();
+                        // session_start();
                         if (isset($_GET['submit'])) {
                             if ($_GET['submit'] == true) {
                                 session_unset();
@@ -73,16 +73,16 @@ if (isset($_POST["edit"])) { ?>
                     <form action="requete.php" method="post" class="formulaireEdit">
 
                         <label><b>Nom :</b></label>
-                        <input type="text" name="nom" required><br>
+                        <input type="text" name="nom"><br>
 
                         <label><b>Prenom :</b></label>
-                        <input type="text" name="prenom" required><br>
+                        <input type="text" name="prenom"><br>
 
                         <label><b>Email :</b></label>
-                        <input type="text" name="email" required><br>
+                        <input type="text" name="email"><br>
 
                         <label><b>Pseudo :</b></label>
-                        <input type="text" name="pseudo" required><br>
+                        <input type="text" name="pseudo"><br>
 
                         <label><b>Type d'utilisateur :</b></label>
                         <select name="menu" id="menu">
@@ -91,7 +91,7 @@ if (isset($_POST["edit"])) { ?>
                         </select>
                         </br>
                         <input type="text" hidden name="id2" value="<?php echo $i ?>">
-                        <input type="submit" id='submit' value="Valider">
+                        <input class="magique" type="submit" id='submit' value="Valider">
                     </form>
                 </div>
 

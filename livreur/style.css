@@ -51,6 +51,7 @@ body {
   grid-column: span 11;
   background-color: #ffffff;
   color: rgb(0, 0, 0);
+  overflow: auto;
 }
 
 .content.menuHide {
@@ -87,17 +88,27 @@ body {
   height: 30px;
 }
 
-.echec {
+.annulation {
   background-color: #bc1004 !important;
 }
 
-.terminer {
+.cours {
   background-color: #02b820 !important;
 }
 
-.cours {
+.recue {
   background-color: #fcbb08 !important;
 }
+
+.livre {
+  background-color: #41fc08 !important;
+}
+
+.expedie {
+  background-color: #0c08fc !important;
+}
+
+
 
 .formulaireEdit {
   width: 150px;

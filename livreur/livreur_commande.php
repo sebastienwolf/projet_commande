@@ -33,7 +33,7 @@ $stmt = $pdo->query('SELECT * FROM commande');
           <a class="nav-link" href='../index.php'><span>Déconnexion</span></a>
 
           <?php
-          session_start();
+          // session_start();
           if (isset($_GET['submit'])) {
             if ($_GET['submit'] == true) {
               session_unset();
@@ -79,13 +79,15 @@ $stmt = $pdo->query('SELECT * FROM commande');
               <td><?php echo $row->dateHeure; ?></td>
               <td><?php echo $row->idUser_p3; ?></td>
               <!-- LA CLASS DE LA LIGNE EST APPELER DE LA MEME MANIERE QUE SON CONTENU POUR MODIFIER LE BACKGROUND CSS EN FONCTION DE CE QUI EST ECRIT DEDANS -->
-              <td class="<?php echo $row->statut; ?>"><?php echo $row->statut; ?></td>
+              <td style="color: white;" class="<?php echo $row->statut; ?>"><?php echo $row->statut; ?></td>
               <!-- MENU DEROULANT SELECTION DE STATUT -->
               <form action="../edit.php" method="post">
                 <td><select name="menu" id="menu">
-                    <option value="en cours">En cours</option>
-                    <option value="terminer">Terminer</option>
-                    <option value="echec">Echec</option>
+                    <option value="recue">Reçue</option>
+                    <option value="cours">En cours</option>
+                    <option value="expedie">Expedié</option>
+                    <option value="livre">Livré</option>
+                    <option value="annulation">Annulation</option>
                   </select>
                 </td>
                 <!-- INPUT DE L'ID DE LA COMMANDE ACTUEL -->
