@@ -58,6 +58,12 @@
                 <input type="password" name="password" id="" placeholder="Password"> <br>
                 <label for=""><b>Pseudo :</b></label>
                 <input type="text" name="userPseudo" id="pseudo" placeholder="Pseudo"> <br>
+                <label><b>Type d'utilisateur :</b></label><br>
+                <select name="menu" id="menu">
+                    <option value="client">client</option>
+                    <option value="livreur">livreur</option>
+                    <option value="admin">admin</option>
+                </select><br>
                 <input type="submit" value="inscription">
             </form>
         </div>

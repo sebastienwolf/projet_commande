@@ -31,9 +31,9 @@
 .login {
   height: 50px;
   width: 100px;
-  backdrop-filter: blur(6px) saturate(84%);
-  -webkit-backdrop-filter: blur(6px) saturate(84%);
-  background-color: rgba(246, 246, 246, 0.22);
+  backdrop-filter: blur(0px) saturate(53%);
+  -webkit-backdrop-filter: blur(0px) saturate(53%);
+  background-color: rgba(221, 221, 221, 0.83);
   border-radius: 12px;
   border: 1px solid rgba(209, 213, 219, 0.3);
   border: 1px solid #000000;
@@ -58,9 +58,9 @@ form {
   width: 100%;
   padding: 30px;
   border: 1px solid #000000;
-  backdrop-filter: blur(6px) saturate(84%);
-  -webkit-backdrop-filter: blur(6px) saturate(84%);
-  background-color: rgba(246, 246, 246, 0.22);
+  backdrop-filter: blur(0px) saturate(53%);
+  -webkit-backdrop-filter: blur(0px) saturate(53%);
+  background-color: rgba(221, 221, 221, 0.83);
   border-radius: 12px;
   border: 1px solid rgba(209, 213, 219, 0.3);
   -webkit-box-shadow: 10px 5px 5px black;
@@ -85,11 +85,23 @@ input {
   border-radius: 12px;
 }
 
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.836);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 12px;
+  background: white;
+}
+
 /* Set a style for all buttons */
 input[type=submit] {
-  backdrop-filter: blur(6px) saturate(84%);
-  -webkit-backdrop-filter: blur(6px) saturate(84%);
-  background-color: rgba(246, 246, 246, 0.22);
+  backdrop-filter: blur(0px) saturate(53%);
+  -webkit-backdrop-filter: blur(0px) saturate(53%);
+  background-color: rgba(221, 221, 221, 0.83);
   border-radius: 12px;
   border: 1px solid rgba(209, 213, 219, 0.3);
   color: #000000;

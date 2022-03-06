@@ -9,6 +9,8 @@ $userPrenom = $_POST['prenom'];
 $userMail = $_POST['mail'];
 $userPassword = $_POST['password'];
 $userPseudo = $_POST['userPseudo'];
+$userType = $_POST['menu'];
+
 
 if (isset($_POST['nom']) && isset($_POST['password']) && isset($_POST['prenom']) && isset($_POST['mail']) && isset($_POST['userPseudo'])) {
 
@@ -32,7 +34,7 @@ if (isset($_POST['nom']) && isset($_POST['password']) && isset($_POST['prenom'])
         // $requeteInscription = "INSERT INTO user (idUser, nom, prenom, age, pseudo, mail, mdp) VALUES
         // (DEFAULT, '$userNom', '$userPrenom', '$userAge', '$userPseudo', '$userMail','$hash')";
         $requeteInscription = "INSERT INTO user_p3 (idUser_p3, nom, prenom, mail, mdp, pseudo, userType) VALUES
-            (DEFAULT, '$userNom', '$userPrenom', '$userMail', '$hash', '$userPseudo', DEFAULT)";
+            (DEFAULT, '$userNom', '$userPrenom', '$userMail', '$hash', '$userPseudo', '$userType')";
         $pdo->query($requeteInscription);
         $_SESSION['pseudo'] = $userPseudo;
         header('Location: ../index.php?erreur=6');
